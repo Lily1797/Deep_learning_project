@@ -1,8 +1,18 @@
 # Deep learning project
 Deep Learning and Artificial Intelligence course
 ___
+# TabMDA Paper Review and Application to Genomic Data
 
-In this project, we implement a general data augmentation framework TabMDA to analyse multiomic and clinical data.
+In this project, we review and analyse the paper *"TabMDA: Data Augmentation for Tabular Domains"* by Andrei Margeloiu et al. (2024). Our goal is to apply the TabMDA approach to  multiomic and clinical data, exploring how well this manifold-based data augmentation strategy performs on different types of omics data compared to the original datasets used in the study.
+
+Specifically, we aim to investigate the differences between the types of tabular data used in TabMDA and our diverse omic dataset, which includes:
+- Protein expression data
+- Gene expression data
+- miRNA expression data
+- Patient clinical information
+- labelled data
+
+We hope to understand the difference between the different data they used in their paper vs. the omic data that we use to extract meaningful insights into how well the augmentation framework generalizes to different omics data types and discuss any unique challenges presented by these biological datasets.
 
 ### TabMDA
 TabMDA utilises the in-context learning (ICL) capabilities of any pre-trained tabular in-context model to increase the robustness and performance of any downstream machine learning models. In a nutshell, this approach augments the training dataset by introducing diversity through label-invariant transformations in the manifold space, leveraging multiple contexts for the embedder. 
