@@ -236,23 +236,6 @@ def main(args):
     y_test_pred = to_numpy(classifier.predict(X_test_enc))
     y_test_pred_proba = to_numpy(classifier.predict_proba(X_test_enc))
 
-    # === Average the predicted probabilities over the contexts ===
-    #y_test_pred_proba_aggregated = y_test_pred_proba.reshape(-1, args.num_contexts_test, args.num_classes)
-    #y_test_pred_proba_aggregated = np.mean(y_test_pred_proba_aggregated, axis=1)
-    #y_test_pred = np.argmax(y_test_pred_proba_aggregated, axis=1)
-
-    y_train = y_train_enc.ravel()
-    y_val = y_val_enc.ravel()
-    y_test = y_test_enc.ravel()
-
-    train_acc = balanced_accuracy_score(y_train, y_train_pred)
-    val_acc = balanced_accuracy_score(y_val, y_val_pred)
-    test_acc = balanced_accuracy_score(y_test, y_test_pred)
-
-    print(f"Train Accuracy: {train_acc:.4f}")
-    print(f"Validation Accuracy: {val_acc:.4f}")
-    print(f"Test Accuracy: {test_acc:.4f}")
-
     # Save classification reports
     classification_report_train = classification_report(y_train_enc, y_train_pred)
     classification_report_val = classification_report(y_val_enc, y_val_pred)
